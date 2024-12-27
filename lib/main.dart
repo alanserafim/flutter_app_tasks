@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_tasks/data/task_inherited.dart';
 import 'package:flutter_app_tasks/screens/initial_screen.dart';
 
 
@@ -14,7 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Tarefas",
       debugShowCheckedModeBanner: false,
-      home: InitialScreen(),
+      home: TaskInherited(
+          child: InitialScreen()
+      ),
     );
 
   }

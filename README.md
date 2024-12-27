@@ -13,6 +13,6 @@ A Flutter app to manage tasks.
 | 05     | TextFormField, Form Controllers, Error Handling with ErrorBuilder                                                  | 
 | 06     | KeyboardType, Keys, Snackbars                                                                                      | 
 | 07     | Navigator, MaterialPageRoute                                                                                       | 
-| 08     | x                                                                                                                  |
+| 08     | Inherited Widget, state management, context                                                                        |
 | 09     | x                                                                                                                  |
 | 10     | x                                                                                                                  |
