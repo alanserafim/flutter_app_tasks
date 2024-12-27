@@ -12,7 +12,7 @@ A Flutter app to manage tasks.
 | 04     | Image, Icon, BoxDecoration, AnimatedOpacity                                                                        | 
 | 05     | TextFormField, Form Controllers, Error Handling with ErrorBuilder                                                  | 
 | 06     | KeyboardType, Keys, Snackbars                                                                                      | 
-| 07     | x                                                                                                                  | 
+| 07     | Navigator, MaterialPageRoute                                                                                       | 
 | 08     | x                                                                                                                  |
 | 09     | x                                                                                                                  |
 | 10     | x                                                                                                                  |

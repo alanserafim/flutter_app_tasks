@@ -13,6 +13,9 @@ class _FormScreenState extends State<FormScreen> {
   TextEditingController imageController = TextEditingController();
   ButtonStyle style = ElevatedButton.styleFrom(
     backgroundColor: Colors.blue,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10),
+    ),
   );
 
   final _formKey = GlobalKey<FormState>();
@@ -137,6 +140,7 @@ class _FormScreenState extends State<FormScreen> {
                         ScaffoldMessenger.of(context).showSnackBar(
                          const SnackBar(content: Text('Salvando nova Tarefa'))
                         );
+                        Navigator.pop(context);
                       }
                     },
                     style: style,
