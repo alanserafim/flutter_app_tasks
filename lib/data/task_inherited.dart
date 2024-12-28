@@ -4,8 +4,8 @@ import 'package:flutter_app_tasks/components/task.dart';
 class TaskInherited extends InheritedWidget {
   TaskInherited({
     super.key,
-    required Widget child
-  }) : super(child: child);
+    required super.child
+  });
 
   final List<Task> taskList = [
     Task(

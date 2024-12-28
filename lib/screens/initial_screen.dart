@@ -26,6 +26,7 @@ class _InitialScreenState extends State<InitialScreen> {
       ),
       body: ListView(
         scrollDirection: Axis.vertical,
+        padding: EdgeInsets.only(top: 8, bottom: 70),
         children: TaskInherited.of(context).taskList,
       ),
       floatingActionButton: FloatingActionButton(

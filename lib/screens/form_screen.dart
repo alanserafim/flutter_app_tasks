@@ -15,12 +15,25 @@ class _FormScreenState extends State<FormScreen> {
   TextEditingController imageController = TextEditingController();
   ButtonStyle style = ElevatedButton.styleFrom(
     backgroundColor: Colors.blue,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(10),
-    ),
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
   );
 
   final _formKey = GlobalKey<FormState>();
+  bool valueValidator(String? value) {
+    if (value != null && value.isEmpty) {
+      return true;
+    }
+    return false;
+  }
+
+  bool difficultyValidator(String? value) {
+    if (value != null && value.isEmpty) {
+      if (int.parse(value) > 5 || int.parse(value) < 1) {
+          return true;
+      }
+    }
+    return false;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,8 +64,8 @@ class _FormScreenState extends State<FormScreen> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
-                      validator: (String? value){
-                        if(value != null && value.isEmpty){
+                      validator: (String? value) {
+                        if (valueValidator(value)) {
                           return 'Insira o nome da tarefa';
                         }
                         return null;
@@ -70,12 +83,9 @@ class _FormScreenState extends State<FormScreen> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
-                      validator: (value){
-                        if(value!.isEmpty
-                            || int.parse(value) > 5
-                            || int.parse(value) < 1)
-                        {
-                          return 'Insira uam dificuldade entre 1 e 5';
+                      validator: (value) {
+                        if (difficultyValidator(value)) {
+                          return 'Insira uma dificuldade entre 1 e 5';
                         }
                         return null;
                       },
@@ -93,8 +103,8 @@ class _FormScreenState extends State<FormScreen> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
-                      validator: (value){
-                        if(value!.isEmpty){
+                      validator: (value) {
+                        if (value!.isEmpty) {
                           return 'Insira uma URL de Imagem';
                         }
                         return null;
@@ -102,9 +112,8 @@ class _FormScreenState extends State<FormScreen> {
                       textAlign: TextAlign.center,
                       keyboardType: TextInputType.url,
                       controller: imageController,
-                      onChanged: (text){
-                        setState(() {
-                        });
+                      onChanged: (text) {
+                        setState(() {});
                       },
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
@@ -125,27 +134,30 @@ class _FormScreenState extends State<FormScreen> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: Image.network(
-                          imageController.text,
-                          fit: BoxFit.cover,
-                          errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace){
-                            return Image.asset('assets/images/not_found.webp');
-                          },
+                        imageController.text,
+                        fit: BoxFit.cover,
+                        errorBuilder: (
+                          BuildContext context,
+                          Object exception,
+                          StackTrace? stackTrace,
+                        ) {
+                          return Image.asset('assets/images/not_found.webp');
+                        },
                       ),
                     ),
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      if(_formKey.currentState!.validate()) {
-                        // print(nameController.text);
-                        // print(int.parse(difficultyController.text));
-                        // print(imageController.text);
+                      if (_formKey.currentState!.validate()) {
                         TaskInherited.of(widget.taskContext).newTask(
-                            nameController.text,
-                            imageController.text,
-                            int.parse(difficultyController.text)
+                          nameController.text,
+                          imageController.text,
+                          int.parse(difficultyController.text),
                         );
                         ScaffoldMessenger.of(context).showSnackBar(
-                         const SnackBar(content: Text('Criando uma nova Tarefa'))
+                          const SnackBar(
+                            content: Text('Criando uma nova Tarefa'),
+                          ),
                         );
                         Navigator.pop(context);
                       }
@@ -153,9 +165,7 @@ class _FormScreenState extends State<FormScreen> {
                     style: style,
                     child: Text(
                       'Adicionar',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
+                      style: TextStyle(color: Colors.white),
                     ),
                   ),
                 ],

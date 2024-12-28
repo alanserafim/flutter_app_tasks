@@ -14,5 +14,5 @@ A Flutter app to manage tasks.
 | 06     | KeyboardType, Keys, Snackbars                                                                                      | 
 | 07     | Navigator, MaterialPageRoute                                                                                       | 
 | 08     | Inherited Widget, state management, context                                                                        |
-| 09     | x                                                                                                                  |
+| 09     | NullSafety, Fixing bugs                                                                                            |
 | 10     | x                                                                                                                  |
