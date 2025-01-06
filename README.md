@@ -16,4 +16,5 @@ A Flutter app to manage tasks.
 | 08     | Inherited Widget, state management, context                                                                        |
 | 09     | NullSafety, Fixing bugs                                                                                            |
 | 10     | Persistence with SQFLite                                                                                           |
-| 10     | The DAO pattern                                                                                                    |
+| 11     | The DAO pattern                                                                                                    |
+| 12     | CRUD Operations                                                                                                    |
