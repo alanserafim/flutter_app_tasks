@@ -15,4 +15,5 @@ A Flutter app to manage tasks.
 | 07     | Navigator, MaterialPageRoute                                                                                       | 
 | 08     | Inherited Widget, state management, context                                                                        |
 | 09     | NullSafety, Fixing bugs                                                                                            |
-| 10     | x                                                                                                                  |
+| 10     | Persistence with SQFLite                                                                                           |
+| 10     | The DAO pattern                                                                                                    |
